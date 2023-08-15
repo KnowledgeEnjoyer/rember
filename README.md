@@ -1,7 +1,7 @@
 
 # About
 
-PLS REMBER...
+*PLS REMBER...*
 
 ![alt text](https://github.com/KnowledgeEnjoyer/rember/blob/master/plsrember.png?raw=true)
 
@@ -13,13 +13,6 @@ having to review the notes from time to time to keep that knowledge.
 Moreover, having to open up an graphical interface just to study is not that conventional, like is 
 done using Anki. Is preferable just write some command in terminal and start studying.
 
-Placeholders:
-- <program_name>
-
-Gonna define a definitive name to those placeholders later. Still thinking in what name the program 
-is going to have and where will be the standard path in unix systems where deck files are going to 
-be stored.
-
 # Features 
 
 ## Create deck
@@ -29,7 +22,7 @@ When deciding for CLI option, the user can create one with a single command inpu
 data related to that deck, such as "Subject" of the deck.
 
 When deciding for creating a new deck by writing, the user can just write a new yaml file inside 
-~/.config/<program_name> where the <program_name> will use to store and query data from decks and their 
+~/.config/rember where the rember will use to store and query data from decks and their 
 cards. Will have an option in CLI that user can use to create a template of a yaml file, with all 
 necessary key-value pairs for a card deck.
 
@@ -50,11 +43,11 @@ note: repeat can hold ``true``, ``false`` or a ``number`` representing days in w
 appear again when studying the deck that contains such card.
 
 Tasks for the first option:
-- Implement the command ``<program_name> deck new --subject=<subject> ``
-- When user enter the above command, create a new yaml file in ~/.config/<program_name> containing ``subject`` 
+- Implement the command ``rember deck new --subject=<subject> ``
+- When user enter the above command, create a new yaml file in ~/.config/rember containing ``subject`` 
 and ``cards`` keys. ``cards`` will be filled up later when adding new cards into a deck.
 - Check if user has .config folder in his home. If not, create one and create another folder inside
-called <program_name>.
+called rember.
 - Do not allow user to create two decks with same names.
 
 Tasks for the second option:
@@ -62,12 +55,12 @@ Tasks for the second option:
 ## List decks
 
 A command will list all existing decks that user created. The yaml file that holds the data 
-structure of those decks are in ~/.config/<program_name>.
+structure of those decks are in ~/.config/rember.
 
 ## Delete one deck
 
 A command will delete one existing deck and all its cards. This also can be done deleting the yaml 
-file for that deck in ~/.config/<program_name>.
+file for that deck in ~/.config/rember.
 
 ## Create card
 
