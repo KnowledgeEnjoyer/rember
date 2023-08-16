@@ -5,11 +5,11 @@
 
 REMBER_CONFIG_FOLDER="~/.config/rember"
 
-function create_config_folder() {
+create_config_folder() {
     mkdir -p "$REMBER_CONFIG_FOLDER"
 }
 
-function check_existing_deck() {
+check_existing_deck() {
 
 }
 
@@ -31,6 +31,7 @@ if [ "$1" = "deck" ] && [ "$2" = "new" ]; then
         exit 1
     fi
 
+    check_existing_deck "name"
 
 fi
 
