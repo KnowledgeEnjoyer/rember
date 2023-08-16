@@ -49,9 +49,7 @@ Tasks for the first option:
 The yaml filename for a deck must be appended by a uuid.
 - [Done] Check if user has .config folder in his home. If not, create one and create another folder inside
 called rember.
-- Do not allow user to create two decks with same names.
 - [Done] Do not allow running ``rember deck new`` without --subject option and its string value.
-- Create a more efficient algorithm for check_existing_deck() function later.
 
 Tasks for the second option:
 
