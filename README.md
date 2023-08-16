@@ -43,13 +43,15 @@ note: repeat can hold ``true``, ``false`` or a ``number`` representing days in w
 appear again when studying the deck that contains such card.
 
 Tasks for the first option:
-- Implement the command ``rember deck new --subject=<subject> ``
-- When user enter the above command, create a new yaml file in ~/.config/rember containing ``subject`` 
-and ``cards`` keys. ``cards`` will be filled up later when adding new cards into a deck.
+- [Done] Implement the command ``rember deck new --subject=<subject>``
+- [Done] When user enter the above command, create a new yaml file in ~/.config/rember containing 
+``subject`` and ``cards`` keys. ``cards`` will be filled up later when adding new cards into a deck.
+The yaml filename for a deck must be appended by a uuid.
 - [Done] Check if user has .config folder in his home. If not, create one and create another folder inside
 called rember.
 - Do not allow user to create two decks with same names.
 - [Done] Do not allow running ``rember deck new`` without --subject option and its string value.
+- Create a more efficient algorithm for check_existing_deck() function later.
 
 Tasks for the second option:
 

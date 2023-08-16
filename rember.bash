@@ -1,18 +1,12 @@
 #!/bin/bash
 
-# rember deck new --subject computer network
 # rember deck new --subject "computer network"
 
-REMBER_CONFIG_FOLDER="~/.config/rember"
+export REMBER_CONFIG_FOLDER="$HOME/.config/rember"
 
 create_config_folder() {
     mkdir -p "$REMBER_CONFIG_FOLDER"
 }
-
-check_existing_deck() {
-
-}
-
 
 create_config_folder
 
@@ -31,7 +25,12 @@ if [ "$1" = "deck" ] && [ "$2" = "new" ]; then
         exit 1
     fi
 
-    check_existing_deck "name"
+    subject_slug=$(echo $4 | tr 'A-Z' 'a-z' | sed s/\ /_/)
+
+    cat <<- EOF > ${REMBER_CONFIG_FOLDER}/${subject_slug}-$(uuidgen).yaml
+subject: $4
+cards:
+EOF
 
 fi
 
