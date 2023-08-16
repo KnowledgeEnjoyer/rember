@@ -46,9 +46,10 @@ Tasks for the first option:
 - Implement the command ``rember deck new --subject=<subject> ``
 - When user enter the above command, create a new yaml file in ~/.config/rember containing ``subject`` 
 and ``cards`` keys. ``cards`` will be filled up later when adding new cards into a deck.
-- Check if user has .config folder in his home. If not, create one and create another folder inside
+- [Done] Check if user has .config folder in his home. If not, create one and create another folder inside
 called rember.
 - Do not allow user to create two decks with same names.
+- [Done] Do not allow running ``rember deck new`` without --subject option and its string value.
 
 Tasks for the second option:
 
