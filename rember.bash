@@ -11,7 +11,7 @@ create_deck() {
 
     subject_slug=$(echo "$1" | tr 'A-Z' 'a-z' | sed s/\ /_/g)
 
-cat <<- EOF > ${REMBER_CONFIG_FOLDER}/${subject_slug}-$(uuidgen).yaml
+cat <<- EOF > ${REMBER_CONFIG_FOLDER}/${subject_slug}.yaml
 subject: $1
 cards:
 EOF
@@ -44,7 +44,15 @@ if [ "$1" = "deck" ]; then
             exit 0
         ;;
 
-        list ) ;;
+        list )
+            for deck_filename in $(ls "$REMBER_CONFIG_FOLDER")
+            do
+                echo "$deck_filename"
+            done
+
+            echo "ID:"
+            echo "Deck Subject:"
+        ;;
         delete ) ;;
         study ) ;;
     esac
