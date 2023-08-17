@@ -16,8 +16,7 @@ subject: $1
 cards:
 EOF
 
-    exit $?
-
+    return $?
 }
 
 
@@ -41,6 +40,7 @@ if [ "$1" = "deck" ]; then
 
             create_deck "$4"
 
+            echo "Deck created: $4"
             exit 0
         ;;
 
