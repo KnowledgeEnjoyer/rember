@@ -39,7 +39,7 @@ cards:
     repeat: true
 ```
 
-note: repeat can hold ``true``, ``false`` or a ``number`` representing days in which a card cannot 
+Note: repeat can hold ``true``, ``false`` or a ``number`` representing days in which a card cannot 
 appear again when studying the deck that contains such card.
 
 Tasks for the first option:
@@ -50,6 +50,9 @@ The yaml filename for a deck must be appended by a uuid.
 - [Done] Check if user has .config folder in his home. If not, create one and create another folder inside
 called rember.
 - [Done] Do not allow running ``rember deck new`` without --subject option and its string value.
+- Max filename size in Linux is 255. Be aware of it when using decks subjects as filename, considering 
+that user has no limits for subject description. Do not allow yaml files for decks to have more than 
+255 characteres.
 
 Tasks for the second option:
 
