@@ -53,7 +53,7 @@ called rember.
 - Max filename size in Linux is 255. Be aware of it when using decks subjects as filename, considering 
 that user has no limits for subject description. Do not allow yaml files for decks to have more than 
 255 characteres.
-- Add numeric IDs to each deck yaml file.
+- [Done] Add numeric IDs to each deck yaml file.
 
 Tasks for the second option:
 

@@ -66,12 +66,15 @@ if [ "$1" = "deck" ]; then
         list )
             for deck_filename in $(ls "$REMBER_CONFIG_FOLDER")
             do
-                echo "$deck_filename"
+                id=$(yq ".id" "$REMBER_CONFIG_FOLDER/$deck_filename")
+                subject=$(yq ".subject" "$REMBER_CONFIG_FOLDER/$deck_filename")
+
+            echo -e "ID: $id\tDeck Subject: $subject"
+
             done
 
-            echo "ID:"
-            echo "Deck Subject:"
         ;;
+
         delete ) ;;
         study ) ;;
     esac
