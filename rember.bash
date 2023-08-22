@@ -105,14 +105,18 @@ if [ "$1" = "deck" ]; then
 
         * ) 
             printf "rember: Command not recognized\n"
+            exit 1
         ;;
     esac
 
+elif [ "$1" = "card" ]; then
+    printf "Card options\n"
+
+else
+    printf "rember: Command not recognized\n"
+    exit 1
 fi
 
-if [ "$1" = "card" ]; then
-    printf "Card options\n"
-fi
 
 
 exit 0
