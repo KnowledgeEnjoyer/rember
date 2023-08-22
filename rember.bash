@@ -77,7 +77,7 @@ if [ "$1" = "deck" ]; then
 
                 printf "ID: %d\tDeck Subject: %s\n" "$id" "$subject"
             done
-
+            exit 0
         ;;
 
         delete ) 
