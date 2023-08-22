@@ -104,7 +104,7 @@ if [ "$1" = "deck" ]; then
         study ) ;;
 
         * ) 
-            printf "Command not recognized\n"
+            printf "rember: Command not recognized\n"
         ;;
     esac
 
