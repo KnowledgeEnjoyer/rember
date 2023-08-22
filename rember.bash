@@ -5,7 +5,13 @@ export REMBER_CONFIG_FOLDER="$HOME/.config/rember"
 export REMBER_CONFIG_FILE_NAME=".rember.yaml"
 
 create_config_folder() {
+
     mkdir -p "$REMBER_CONFIG_FOLDER"
+
+    if [ ! $? ]; then
+        printf "Unable to create rember config folder.\n"
+        exit 1
+    fi
 
     if [ ! -f "$REMBER_CONFIG_FOLDER/"$REMBER_CONFIG_FILE_NAME"" ]; then
 
@@ -23,7 +29,7 @@ generate_deck_id() {
 
     yq -iy ".last_id_created = $new_id" "$REMBER_CONFIG_FOLDER/"$REMBER_CONFIG_FILE_NAME""
     
-    echo $new_id
+    printf "%d" $new_id
 }
 
 create_deck() {
@@ -46,20 +52,20 @@ if [ "$1" = "deck" ]; then
     case "$2" in
         new ) 
             if [ "$3" != "--subject" ]; then
-                echo "Missing '--subject' option."
-                echo "Example: --subject \"C programming\""
+                printf "Missing '--subject' option.\n"
+                printf "Example: --subject \"C programming\"\n"
                 exit 1
             fi
         
             if [ -z "$4" ]; then
-                echo "Missing string for --subject option."
-                echo "Example: --subject \"C programming\""
+                printf "Missing string for --subject option.\n"
+                printf "Example: --subject \"C programming\"\n"
                 exit 1
             fi
 
             create_deck "$4"
 
-            echo "Deck created: $4"
+            printf "Deck created: %s\n" "$4"
             exit 0
         ;;
 
@@ -69,13 +75,32 @@ if [ "$1" = "deck" ]; then
                 id=$(yq ".id" "$REMBER_CONFIG_FOLDER/$deck_filename")
                 subject=$(yq ".subject" "$REMBER_CONFIG_FOLDER/$deck_filename")
 
-            echo -e "ID: $id\tDeck Subject: $subject"
-
+                printf "ID: %d\tDeck Subject: %s\n" "$id" "$subject"
             done
 
         ;;
 
-        delete ) ;;
+        delete ) 
+
+            if [ -z $3 ] || [[ ! $3 =~ ^-?[0-9]+$ ]]; then
+                printf "Is required a valid ID for deleting a deck.\n"
+                printf "Example: 'deck delete 34'\n"
+                exit 1
+            fi
+
+            for deck_filename in $(ls "$REMBER_CONFIG_FOLDER")
+            do
+                if [ $3 -eq $(yq ".id" "$REMBER_CONFIG_FOLDER/$deck_filename") ]; then
+                    rm "$REMBER_CONFIG_FOLDER/$deck_filename"
+                    printf "Deck deleted\n"
+                    exit 0
+                fi
+            done
+
+            printf "Deck not found\n"
+            exit 1
+        ;;
+
         study ) ;;
     esac
 
