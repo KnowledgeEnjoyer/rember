@@ -102,8 +102,17 @@ if [ "$1" = "deck" ]; then
         ;;
 
         study ) ;;
+
+        * ) 
+            printf "Command not recognized\n"
+        ;;
     esac
 
 fi
+
+if [ "$1" = "card" ]; then
+    printf "Card options\n"
+fi
+
 
 exit 0
