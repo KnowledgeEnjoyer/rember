@@ -54,6 +54,7 @@ called rember.
 that user has no limits for subject description. Do not allow yaml files for decks to have more than 
 255 characteres.
 - [Done] Add numeric IDs to each deck yaml file.
+- [] Add description option to deck creation.
 
 Tasks for the second option:
 
