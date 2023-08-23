@@ -104,13 +104,22 @@ if [ "$1" = "deck" ]; then
         study ) ;;
 
         * ) 
-            printf "rember: Command not recognized\n"
+            printf "rember: Command not recognized for deck\n"
             exit 1
         ;;
     esac
 
 elif [ "$1" = "card" ]; then
-    printf "Card options\n"
+
+    case "$2" in 
+        add ) 
+            
+        ;;
+
+        * ) 
+            printf "rember: Command not recognized for card\n"
+            exit 1
+        ;;
 
 else
     printf "rember: Command not recognized\n"
