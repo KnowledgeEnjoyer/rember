@@ -71,11 +71,18 @@ Tasks:
 A command will delete one existing deck and all its cards. This also can be done deleting the yaml 
 file for that deck in ~/.config/rember.
 
+Tasks:
 - [] Deleting is a little slow. It can stay this way for now, but will require improvements later.
 
 ## Create card
 
-A command will list all cards associated to one deck, along with their data such as "question".
+A command will create one card and put onto some existing deck. ``rember card add <deck_id>`` will 
+do this job.
+When entering this command, program will prompt for user to insert data related to that card to be 
+created.
+User should provide value for following fields (but also can let in blank):
+- card response
+- card answer
 
 ## List cards
 
