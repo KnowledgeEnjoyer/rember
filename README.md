@@ -64,12 +64,14 @@ A command will list all existing decks that user created. The yaml file that hol
 structure of those decks are in ~/.config/rember.
 
 Tasks:
-- Listing is a little slow. It can stay this way for now, but will require improvements later.
+- [] Listing is a little slow. It can stay this way for now, but will require improvements later.
 
 ## Delete one deck
 
 A command will delete one existing deck and all its cards. This also can be done deleting the yaml 
 file for that deck in ~/.config/rember.
+
+- [] Deleting is a little slow. It can stay this way for now, but will require improvements later.
 
 ## Create card
 
