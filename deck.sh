@@ -71,7 +71,8 @@ delete_deck() {
                 return 1
             fi
 
-            printf "Deck deleted\n"
+            printf "rember: deck deleted\n"
+            return 0
         fi
     done
 
